@@ -1,0 +1,320 @@
+:root {
+  /* Colors */
+  /* Primary */
+  --lt-red: 0, 100%, 67%; /* Light red: */
+  --org-yellow: 39, 100%, 56%; /*Orangey yellow*/
+  --gr-teal: 166, 100%, 37%; /*Green teal:  */
+  --cbt-blue: 234, 85%, 45%; /*  Cobalt blue */
+
+  /* Gradients */
+  --lgt-sl-blue: 252, 100%, 67%; /* Light slate blue (background) */
+  --lgt-ryl-blueLight: 241, 81%, 54%; /* Light royal blue (background): */
+  --vlt-blue: hsla(256, 72%, 46%, 1); /* Violet blue (circle): */
+  --prs-blue: hsla(241, 72%, 46%, 0); /* Persian blue (circle) */
+
+  /* Neutral */
+  --pale-blue: 221, 100%, 96%; /* Pale blue */
+  --lgt-lvdr: 241, 100%, 89%; /* Light lavender: */
+  --drk-gry-blue: 224, 30%, 27%; /* Dark gray blue */
+
+  --shadow-color: 0deg 0% 63%;
+  --shadow-elevation-low: 0.2px 0.2px 0.3px hsl(var(--shadow-color) / 0.48),
+    0.9px 0.9px 1.5px -2.3px hsl(var(--shadow-color) / 0.52);
+  --shadow-elevation-medium: 0.2px 0.2px 0.3px hsl(var(--shadow-color) / 0.45),
+    1.2px 1.2px 1.9px -1.2px hsl(var(--shadow-color) / 0.47),
+    4.4px 4.6px 7.3px -2.3px hsl(var(--shadow-color) / 0.49);
+  --shadow-elevation-high: 0.2px 0.2px 0.3px hsl(var(--shadow-color) / 0.5),
+    2.2px 2.3px 3.7px -0.6px hsl(var(--shadow-color) / 0.52),
+    5.1px 5.3px 8.4px -1.2px hsl(var(--shadow-color) / 0.53),
+    11px 11.5px 18.3px -1.8px hsl(var(--shadow-color) / 0.54),
+    22px 23px 36.5px -2.3px hsl(var(--shadow-color) / 0.56);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+html {
+  height: 100%;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  overflow-x: hidden;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 1.25rem;
+}
+
+main {
+  max-width: 1080px;
+}
+
+footer {
+  margin-top: 1.5rem;
+}
+p,
+span,
+h2,
+h3 {
+  /*  display: block; */
+  margin: 0;
+  padding: 0;
+}
+
+/* Helper classes */
+.fW-700 {
+  font-weight: 700;
+}
+
+.reaction-color {
+  color: hsl(var(--lt-red));
+}
+
+.memory-color {
+  color: hsl(var(--org-yellow));
+}
+
+.verbal-color {
+  color: hsl(var(--gr-teal));
+}
+
+.visual-color {
+  color: hsl(var(--cbt-blue));
+}
+
+/* Mobile Layout */
+
+.total-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+    hsl(var(--lgt-sl-blue)),
+    hsl(var(--lgt-ryl-blueLight))
+  );
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  padding-bottom: 2.4rem;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
+
+.total-result h1 {
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.total-score {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;
+  background: linear-gradient(var(--vlt-blue), var(--prs-blue));
+  aspect-ratio: 1;
+  border-radius: 50%;
+  max-width: 15rem;
+  margin-top: 1.1rem;
+  padding: 1.1rem;
+}
+
+.total-score span {
+  font-size: 2.9em;
+  font-weight: 600;
+  justify-self: flex-end;
+}
+
+.total-score p {
+  color: hsla(var(--lgt-lvdr), 1);
+  font-size: 0.8em;
+  justify-self: left;
+}
+
+.total-result h2 {
+  font-size: 1.2em;
+  margin-top: 1rem;
+}
+
+.total-result > p {
+  color: hsla(var(--lgt-lvdr), 1);
+  font-size: 0.75em;
+  margin-top: 0.5rem;
+  max-width: 35ch;
+  letter-spacing: 0.8px;
+}
+
+.summary-result {
+  padding: 1.2rem 2rem;
+}
+
+.summary-result h3 {
+  font-size: 0.9em;
+}
+
+.points {
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.summary-points {
+  display: flex;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  padding-block: 0.9rem;
+  font-size: 1em;
+  background-color: transparent;
+  overflow: hidden;
+  border-radius: 0.45rem;
+  position: relative;
+  width: 100%;
+}
+
+.summary-points img {
+  max-width: 1.2rem;
+}
+
+.summary-points:first-child .progress-bar {
+  background-color: hsla(var(--lt-red), 0.1);
+}
+
+.summary-points:nth-child(2) .progress-bar {
+  background-color: hsla(var(--org-yellow), 0.1);
+}
+
+.summary-points:nth-child(3) .progress-bar {
+  background-color: hsla(var(--gr-teal), 0.1);
+}
+
+.summary-points:last-child .progress-bar {
+  background-color: hsla(var(--cbt-blue), 0.1);
+}
+
+.progress-bar {
+  width: 0;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.progress-bar.width-animated {
+  transition: width 0.25s ease;
+}
+
+.points-scored {
+  justify-self: flex-end;
+  color: hsla(var(--drk-gry-blue), 0.7);
+  margin-left: auto;
+}
+
+.points-earned {
+  font-weight: 800;
+  color: hsl(var(--drk-gry-blue));
+}
+
+.button {
+  width: 100%;
+  margin-top: 1.55rem;
+  padding-block: 1.1rem;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: white;
+  /*background-color: hsl(var(--drk-gry-blue));*/
+  border: none;
+  border-radius: 2rem;
+  background-image: linear-gradient(
+    -90deg,
+    hsl(var(--lgt-sl-blue)),
+    hsl(var(--lgt-ryl-blueLight)),
+    hsl(var(--drk-gry-blue))
+  );
+  background-size: 400%;
+  background-position: left;
+  transition: background-position 0.5s ease;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-position: center;
+}
+
+@media screen and (min-width: 45em) {
+  main {
+    max-width: 740px;
+    margin-top: 17.8rem;
+    margin-inline: auto;
+    display: flex;
+    border-radius: 35px;
+    box-shadow: var(--shadow-elevation-high);
+  }
+
+  main > * {
+    flex: 1;
+  }
+
+  .total-result {
+    padding: 2rem;
+    border-radius: 35px;
+  }
+
+  .total-result h1 {
+    font-size: 1.2em;
+    margin-top: 0.2rem;
+  }
+
+  .total-score {
+    margin-top: 2rem;
+    padding: 2.5rem;
+  }
+
+  .total-score span {
+    font-size: 3.5em;
+    font-weight: 600;
+  }
+
+  .total-score p {
+    font-size: 0.9em;
+  }
+
+  .total-result h2 {
+    font-size: 1.5em;
+    margin-top: 1rem;
+  }
+
+  .total-result > p {
+    font-size: 0.9em;
+    max-width: 27ch;
+    line-height: 1.3;
+    margin-bottom: 1.7rem;
+  }
+
+  .summary-result {
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+  }
+
+  .summary-result h3 {
+    font-size: 1.2em;
+    margin-top: 1rem;
+  }
+}
